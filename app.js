@@ -1,7 +1,9 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const ejs = require('ejs')
 const mongoose = require('mongoose')
+const encrypt = require('mongoose-encryption')
 
 const app = express()
 
@@ -11,7 +13,14 @@ app.set('view engine', 'ejs')
 
 mongoose.connect('mongodb://localhost:27017/userDB')
 
-const User = mongoose.model('User', {email: String, password: String})
+const userSchema = mongoose.Schema({
+    email: String, 
+    password: String
+})
+
+userSchema.plugin(encrypt, {secret: process.env.KEY, encryptedFields: ['password']})
+
+const User = mongoose.model('User', userSchema)
 
 app.route('/')
 .get((req, res) => {
