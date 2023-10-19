@@ -33,7 +33,8 @@ mongoose.connect('mongodb://localhost:27017/userDB', {
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
-    googleId: String
+    googleId: String,
+    secret: String
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -115,7 +116,9 @@ app.route('/register')
 app.route('/secrets')
     .get((req, res) => {
         if (req.isAuthenticated()) {
-            res.render('secrets');
+            User.find({'secret': {$ne:null}}).then((foundUsers) => {
+                res.render('secrets', {users: foundUsers});
+            })
         } else {
             res.redirect('/login');
         }
@@ -130,7 +133,25 @@ app.route('/logout')
 
 app.route('/submit')
     .get((req, res) => {
-        res.render('submit');
+        if (req.isAuthenticated()) {
+            res.render('submit');
+        } else {
+            res.redirect('/login');
+        }
+    })
+    .post((req, res) => {
+        const userSecret = req.body.secret;
+
+        User.findById(req.user.id).then((foundUser) => {
+            if(foundUser) {
+                foundUser.secret = userSecret;
+                foundUser.save().then((result) => {
+                    res.redirect('/secrets');
+                }).catch((err) => {
+                    console.log(err);
+                });
+            }
+        });
     });
 
 app.listen(3000, () => {
