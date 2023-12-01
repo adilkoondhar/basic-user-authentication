@@ -13,3 +13,7 @@ The project is divided into different levels, each showcasing different authenti
 
 ## About
 Authentication plays a vital role in software and websites. Different authentication methods are used to secure user access. This project covers a range of techniques to familiarize you with the various aspects of user authentication and how to implement them.
+
+## Features
+- Users can post anonymous secrets.
+- Users can read and update secrets anonymously.
