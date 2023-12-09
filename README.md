@@ -17,3 +17,6 @@ Authentication plays a vital role in software and websites. Different authentica
 ## Features
 - Users can post anonymous secrets.
 - Users can read and update secrets anonymously.
+
+## Technologies Used
+- **CSS:** Custom styling is implemented using CSS to create an aesthetically pleasing design.
