@@ -21,3 +21,4 @@ Authentication plays a vital role in software and websites. Different authentica
 ## Technologies Used
 - **Nodejs:** This powerful backend technology seamlessly manages data, ensuring the security and accessibility.
 - **CSS:** Custom styling is implemented using CSS to create an aesthetically pleasing design.
+- **EJS:** EJS is used to embed JavaScript code within HTML to create dynamic content.
