@@ -25,3 +25,4 @@ Authentication plays a vital role in software and websites. Different authentica
 - **JavaScript:** A versatile scripting language used for building interactive web pages.
 - **bcryptjs:** Simplifies password hashing, ensuring robust cryptographic security.
 - **Passport.js:** A middleware library for Node.js, simplifying authentication and authorization workflows in web applications.
+- **npm:** The default package manager for Node.js, facilitating easy dependency management.
