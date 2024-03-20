@@ -27,3 +27,4 @@ Authentication plays a vital role in software and websites. Different authentica
 - **Passport.js:** A middleware library for Node.js, simplifying authentication and authorization workflows in web applications.
 - **npm:** The default package manager for Node.js, facilitating easy dependency management.
 - **Expressjs:** Powerful Node.js framework for building web apps & APIs.
+- **Mongoose:** Simplifies interacting with MongoDB in Node.js by offering schemas, queries, and abstraction.
